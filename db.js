@@ -6,7 +6,7 @@ const path = require("path");
 const process = require('process');
 
 
-class Json-Db {
+class Zoranmil-Json-Db {
     constructor(DbPath) {
   	this.DbName=path.join(process.env.PROGRAMDATA ,DbPath+".json");;
     this.data=[];
@@ -174,4 +174,4 @@ class Json-Db {
    });
    };
 };
-module.exports = Json-Db;
+module.exports = Zoranmil-Json-Db;

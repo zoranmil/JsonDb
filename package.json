@@ -1,5 +1,5 @@
 {
-	"name": "JsonDb",
+	"name": "@zoranmil/JsonDb",
 	"version": "1.0.0",
 	"description": "",
 	"main": "db.js",

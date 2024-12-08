@@ -1,9 +1,10 @@
 {
-	"name": "Zoranmil-Json-Db",
-	"version": "1.0.0",
-	"description": "",
+	"name": "@zoranmil/jsondb",
+	"version": "1.0.4",
+	"description": "An easy-to-use JSON database",
 	"main": "db.js",
 	"author": "molicevic zoran",
+	 "homepage": "https://github.com/zoranmil/JsonDb#readme",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

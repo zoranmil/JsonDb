@@ -93,6 +93,7 @@ let dbdata=DB.Select().Limit(from,records_per_page).ByIdDesc('id').data;
   Where(key,value);
 ```
 let data= DB.Select().Where(key,value).data;
+
 It selects all data which satisfies condition key > value.
 
 
@@ -114,7 +115,7 @@ Insert(json,primry_key);
 let json={'naziv':naziv,"cena":cena,"kolicina":kolicina,"marka":marka};
 
  primry_key='id';
- 
+
 DB.Insert(json,primry_key);
 
 
@@ -124,8 +125,11 @@ DB.Insert(json,primry_key);
 Update(json,  key,value);
 ```
 let json={'naziv':naziv,"cena":cena,"kolicina":kolicina,"marka":marka};
+
  key='id';
+
  value=1;
+ 
  DB.Update(json,  key,value);
 
 ### Delete:
@@ -134,7 +138,9 @@ Delete(key,value);
 ```
 
  key='id';
+
  value=1;
+
  DB.Delete( key,value);
 
 

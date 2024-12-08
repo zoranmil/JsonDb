@@ -41,7 +41,8 @@ Always when treating strings on function arguments, go with ‘stringName’ ins
 Just run:
 
 ```
-rdtb.create(‘dbname’) 
+const Db = require('@zoranmil/jsondb');
+const JSON_DBPATH="baza";
 ```
 
 dbname is the name of your database, and it will create the dbname.json at the same folder of your .js file.
@@ -51,8 +52,7 @@ dbname is the name of your database, and it will create the dbname.json at the s
 
 Just run:  
 ```
-const Db = require('@zoranmil/jsondb');
-const JSON_DBPATH="baza";
+Insert(json,primry_key);
 ```
 
 let json={'naziv':naziv,"cena":cena,"kolicina":kolicina,"marka":marka};

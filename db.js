@@ -6,7 +6,7 @@ const path = require("path");
 const process = require('process');
 
 
-class Zoranmil-Json-Db {
+class jsondb {
     constructor(DbPath) {
   	this.DbName=path.join(process.env.PROGRAMDATA ,DbPath+".json");;
     this.data=[];
@@ -29,6 +29,23 @@ class Zoranmil-Json-Db {
      }
      this.data.push( udata);
       writeFileSync(this.DbName, JSON.stringify(this.data));
+   };
+   Between ( key, value1, value2) {
+      if(typeof value1!== 'number'){
+         value1=parseInt(value1);
+        }
+         if(typeof value2!== 'number'){
+            value2=parseInt(value2);
+         }
+      this.newdata= [];
+       let i=0;
+     for ( i = 0; i < this.data.length; i++){
+         if(this.data[i][key] >= value1 && this.data[i][key] <= value2){
+           this.newdata.push(this.data[i]);
+         }
+       }
+        this.data=this.newdata;
+        return this;
    };
    Like (col,name){
      this.newdata= [];
@@ -123,8 +140,8 @@ class Zoranmil-Json-Db {
   }
   sortByIdDesc(col){
   this.data.sort(function(a, b){
-    var nameA = a[col];
-    var nameB = b[col];
+    var nameA = parseInt(a[col]);
+    var nameB = parseInt(b[col]);
   if (nameA > nameB) {
     return -1;
   }
@@ -136,8 +153,8 @@ class Zoranmil-Json-Db {
   };
   sortByIdAsc(col){
   this.data.sort(function(a, b){
-    var nameA = a[col];
-    var nameB = b[col];
+    var nameA = parseInt(a[col]);
+    var nameB = parseInt(b[col]);
   if (nameA < nameB) {
     return -1;
   }
@@ -174,4 +191,4 @@ class Zoranmil-Json-Db {
    });
    };
 };
-module.exports = Zoranmil-Json-Db;
+module.exports = jsondb;

@@ -42,8 +42,8 @@ Just run:
 
 ```
 const Db = require('@zoranmil/jsondb');
-const JSON_DBPATH="baza";
-const DB=new Db( JSON_DBPATH);
+const DBNAME="baza";
+const DB=new Db( DBNAME);
 ```
 
 dbname is the name of your database, and it will create the dbname.json at the same folder of your .js file.
@@ -129,7 +129,7 @@ let json={'naziv':naziv,"cena":cena,"kolicina":kolicina,"marka":marka};
  key='id';
 
  value=1;
- 
+
  DB.Update(json,  key,value);
 
 ### Delete:

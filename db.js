@@ -6,7 +6,7 @@ const path = require("path");
 const process = require('process');
 
 
-class JsonDb {
+class Json-Db {
     constructor(DbPath) {
   	this.DbName=path.join(process.env.PROGRAMDATA ,DbPath+".json");;
     this.data=[];
@@ -174,4 +174,4 @@ class JsonDb {
    });
    };
 };
-module.exports = JsonDb;
+module.exports = Json-Db;

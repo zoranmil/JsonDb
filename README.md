@@ -73,29 +73,31 @@ Selects all data from database.
 
 ### Select Limit:
 ```
-let dbdata=DB.Select().Limit(from,records_per_page).data;
+Limit(from,records_per_page)
 ```
+let dbdata=DB.Select().Limit(from,records_per_page).data;
+
 ### Sorting: 
 ```
-let dbdata=DB.Select().ByIdDesc('id').data;
-let dbdata=DB.Select().Limit(from,records_per_page).ByIdDesc('id').data;
-     ByIdDesc(key);
+    ByIdDesc(key);
     ByIdAsc(key);
     ByNameAsc(key);
     ByNameDesc(key)
 ```
-
+let dbdata=DB.Select().ByIdDesc('id').data;
+let dbdata=DB.Select().Limit(from,records_per_page).ByIdDesc('id').data;
 
 ### Select Where :
 ```
-  let data= DB.Select().Where(key,value).data;
+  Where(key,value);
 ```
+let data= DB.Select().Where(key,value).data;
 It selects all data which satisfies condition key > value.
 
 
 ### Select  Between
 ```
- Between ( key, value1, value2);
+Between ( key, value1, value2);
 ```
 DB.Select().Between ( 'id' ,1,2).data;
 
@@ -106,7 +108,7 @@ DB.Select().Between ( 'id' ,1,2).data;
 DB.Select().Like( 'name' ,'ja').data;
 ### Insert: 
 ```
-DB.Insert(json,primry_key);
+Insert(json,primry_key);
 ```
 let json={'naziv':naziv,"cena":cena,"kolicina":kolicina,"marka":marka};
  primry_key='id';
@@ -116,7 +118,7 @@ DB.Insert(json,primry_key);
 
 ### Update:
 ```
-DB.Update(json,  key,value);
+Update(json,  key,value);
 ```
 let json={'naziv':naziv,"cena":cena,"kolicina":kolicina,"marka":marka};
  key='id';
@@ -125,7 +127,7 @@ let json={'naziv':naziv,"cena":cena,"kolicina":kolicina,"marka":marka};
 
 ### Delete:
 ```
-DB.Delete(key,value);
+Delete(key,value);
 ```
 
  key='id';

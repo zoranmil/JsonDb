@@ -116,7 +116,7 @@ DB.Insert(json,primry_key);
 
 ### Update:
 ```
-DB.Update(json,  key,primry_key);
+DB.Update(json,  key,value);
 ```
 let json={'naziv':naziv,"cena":cena,"kolicina":kolicina,"marka":marka};
  key='id';

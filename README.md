@@ -112,7 +112,9 @@ DB.Select().Like( 'name' ,'ja').data;
 Insert(json,primry_key);
 ```
 let json={'naziv':naziv,"cena":cena,"kolicina":kolicina,"marka":marka};
+
  primry_key='id';
+ 
 DB.Insert(json,primry_key);
 
 

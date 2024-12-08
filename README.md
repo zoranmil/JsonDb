@@ -25,7 +25,7 @@ npm i @zoranmil/jsondb
 
 Then, in your .js, summon it with:
 ```
-const rdtb = require('@zoranmil/jsondb')
+const DB = require('@zoranmil/jsondb')
 ```
 
 and you're ready to go!

@@ -85,6 +85,7 @@ let dbdata=DB.Select().Limit(from,records_per_page).data;
     ByNameDesc(key)
 ```
 let dbdata=DB.Select().ByIdDesc('id').data;
+
 let dbdata=DB.Select().Limit(from,records_per_page).ByIdDesc('id').data;
 
 ### Select Where :

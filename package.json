@@ -1,19 +1,19 @@
 {
 	"name": "@zoranmil/jsondb",
-	"version": "1.0.4",
+	"version": "1.0.8",
 	"description": "An easy-to-use JSON database",
 	"main": "db.js",
 	"author": "Milicevic Zoran",
 	"homepage": "https://github.com/zoranmil/JsonDb#readme",
 	"repository": {
-    "type": "git",
-    "url": "git+https://github.com/zoranmil/JsonDb.git"
-  },
-  "keywords": [
-     "json",
-     "database",
-     "electron"
-   ],
+		"type": "git",
+		"url": "git+https://github.com/zoranmil/JsonDb.git"
+	},
+	"keywords": [
+		"json",
+		"database",
+		"electron"
+	],
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

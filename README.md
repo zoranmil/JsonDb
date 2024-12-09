@@ -15,7 +15,6 @@ Pros
 Cons
 1.	Slow when dealing with big data volumes
 2.	Low security, just erase the .json created and the data is lost
-
 ### Installing
 
 Just run: 
@@ -41,14 +40,20 @@ Always when treating strings on function arguments, go with ‘stringName’ ins
 Just run:
 
 ```
-const Db = require('@zoranmil/jsondb');
-const DBNAME="baza";
-const DB=new Db( DBNAME);
+const DBNAME="dbname";
+const DB=new Db( DBNAME,{ dir:"./"});
 ```
 
-dbname is the name of your database, and it will create the dbname.json at the same folder of your .js file.
+dbname is the name of your database, and it will create the dbname.json.
 
+in windows you don't have to take the directory  just call
 
+const DB=new Db( DBNAME);
+
+the json will be in
+
+ProgramData directory 
+ 
 ## Inserting data
 
 Just run:  
@@ -56,7 +61,7 @@ Just run:
 Insert(json,primry_key);
 ```
 
-let json={'naziv':naziv,"cena":cena,"kolicina":kolicina,"marka":marka};
+let json={'name':name,"price":price,"amount":amount,"brand":brand};
  primry_key='id';
 
 DB.Insert(json,primry_key);
@@ -66,7 +71,7 @@ DB.Insert(json,primry_key);
 
 ### Select All:
 ```
-let dbdata=DB.Select().data;
+let dbdata=DB.Select().get();
 
 ```
 Selects all data from database.
@@ -75,7 +80,7 @@ Selects all data from database.
 ```
 Limit(from,records_per_page)
 ```
-let dbdata=DB.Select().Limit(from,records_per_page).data;
+let dbdata=DB.Select().Limit(from,records_per_page).get();
 
 ### Sorting: 
 ```
@@ -84,15 +89,15 @@ let dbdata=DB.Select().Limit(from,records_per_page).data;
     ByNameAsc(key);
     ByNameDesc(key)
 ```
-let dbdata=DB.Select().ByIdDesc('id').data;
+let dbdata=DB.Select().ByIdDesc('id').get();
 
-let dbdata=DB.Select().Limit(from,records_per_page).ByIdDesc('id').data;
+let dbdata=DB.Select().Limit(from,records_per_page).ByNameDesc('name').get();
 
 ### Select Where :
 ```
   Where(key,value);
 ```
-let data= DB.Select().Where(key,value).data;
+let data= DB.Select().Where(key,value).get();
 
 It selects all data which satisfies condition key > value.
 
@@ -101,18 +106,19 @@ It selects all data which satisfies condition key > value.
 ```
 Between ( key, value1, value2);
 ```
-DB.Select().Between ( 'id' ,1,2).data;
+
+DB.Select().Between ( 'price' ,100,200).get();
 
 ### Select  Like
 ```
   Like (key,name)
 ```
-DB.Select().Like( 'name' ,'ja').data;
+DB.Select().Like( 'name' ,'zora').get();
 ### Insert: 
 ```
 Insert(json,primry_key);
 ```
-let json={'naziv':naziv,"cena":cena,"kolicina":kolicina,"marka":marka};
+let json={'name':name,"price":price,"amount":amount,"brand":brand};
 
  primry_key='id';
 
@@ -124,13 +130,13 @@ DB.Insert(json,primry_key);
 ```
 Update(json,  key,value);
 ```
-let json={'naziv':naziv,"cena":cena,"kolicina":kolicina,"marka":marka};
+let json={'name':name,"price":price,"amount":amount,"brand":brand};
 
  key='id';
+ 
+ where_value=1;
 
- value=1;
-
- DB.Update(json,  key,value);
+ DB.Update(json,  key,where_value);
 
 ### Delete:
 ```
@@ -139,9 +145,9 @@ Delete(key,value);
 
  key='id';
 
- value=1;
+ where_value=1;
 
- DB.Delete( key,value);
+ DB.Delete( key,where_value);
 
 
 ## License

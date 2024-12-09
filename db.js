@@ -7,8 +7,12 @@ const process = require('process');
 
 
 class jsondb {
-    constructor(DbPath) {
-  	this.DbName=path.join(process.env.PROGRAMDATA ,DbPath+".json");;
+    constructor(DbPath,options) {
+    let defaultOptions = {
+  		   	  dir: process.env.PROGRAMDATA,
+  		    };
+    this.config  = Object.assign({}, defaultOptions, options || {});
+  	this.DbName=path.join(this.config.dir,DbPath+".json");;
     this.data=[];
     this.newdata=[];
     if (!fs.existsSync(this.DbName)) {
@@ -30,6 +34,9 @@ class jsondb {
      this.data.push( udata);
       writeFileSync(this.DbName, JSON.stringify(this.data));
    };
+   get(){
+     return this.data;
+   }
    Between ( key, value1, value2) {
       if(typeof value1!== 'number'){
          value1=parseInt(value1);
@@ -63,6 +70,12 @@ class jsondb {
   };
   Update(array, col,where){
     this.Select();
+    if(array.length == undefined){
+      let  newa=[];
+      newa.push(array);
+      array=newa;
+      console.log(array);
+    }
     let objIndex = this.data.findIndex(obj => obj[col] == where);
     if (objIndex === -1) {
       return;

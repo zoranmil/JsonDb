@@ -31,7 +31,6 @@ and you're ready to go!
 
 ## How to use
 
-Important note: rdtb database is case sensitive, so if you try to query “Ruben Acevedo” typing “ruben acevedo” it will not work.
 
 Always when treating strings on function arguments, go with ‘stringName’ instead of stringName. While when treating with ints, Boolean, etc just go without ‘ ‘.
 
